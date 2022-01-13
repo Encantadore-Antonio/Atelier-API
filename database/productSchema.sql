@@ -133,7 +133,7 @@ CREATE TABLE reviews (
   rating text,
   date bigint,
   summary varchar(255),
-  body varchar(255),
+  body varchar(1000),
   recommend boolean,
   reported boolean,
   reviewer_name varchar(32),
