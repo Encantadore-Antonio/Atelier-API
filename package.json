@@ -1,0 +1,27 @@
+{
+  "name": "product_overview",
+  "version": "1.0.0",
+  "description": "SDC Product Overview",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon -server",
+    "drop": "dropdb 'products'",
+    "create": "createdb 'products' && psql -d products -U ginwoopak -w -f ./database/productSchema.sql",
+    "initialize": "npm run drop && npm run create"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Encantadore-Antonio/Product_Overview.git"
+  },
+  "author": "Ginwoo Pak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Encantadore-Antonio/Product_Overview/issues"
+  },
+  "homepage": "https://github.com/Encantadore-Antonio/Product_Overview#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "postgres": "^1.0.2"
+  }
+}
