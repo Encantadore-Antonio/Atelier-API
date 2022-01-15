@@ -63,7 +63,7 @@ CREATE TABLE styles (
   name varchar(32),
   sale_price varchar(32),
   original_price varchar(32),
-  default_style text
+  default_style boolean
 );
 
 -- ---
