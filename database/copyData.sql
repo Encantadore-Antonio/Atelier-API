@@ -1,5 +1,3 @@
-
-
 COPY reviews
 FROM '/Users/ginwoopak/Desktop/hr/SDC/Product_Overview/csvData/reviews.csv'
 DELIMITER ','

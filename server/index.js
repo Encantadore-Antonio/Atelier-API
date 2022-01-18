@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var cors = require('cors');
 const { sql } = require('../database/index.js');
 
-const port = 3000;
+const port = 3002;
 const app = express();
 
 app.use(bodyParser.json());
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/products', (req, res) => {
