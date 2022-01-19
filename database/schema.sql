@@ -116,28 +116,6 @@ CREATE TABLE `Campus` (
 );
 
 -- ---
--- Table 'Reviews'
---
--- ---
-
-DROP TABLE IF EXISTS `Reviews`;
-
-CREATE TABLE `Reviews` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `review_id` INTEGER NULL DEFAULT NULL,
-  `rating` INTEGER NULL DEFAULT NULL,
-  `summary` VARCHAR NULL DEFAULT NULL,
-  `recommend` VARCHAR NULL DEFAULT NULL,
-  `response` VARCHAR NULL DEFAULT NULL,
-  `body` VARCHAR NULL DEFAULT NULL,
-  `date` DATETIME NULL DEFAULT NULL,
-  `reviewer_name` VARCHAR NULL DEFAULT NULL,
-  `helpfulness` INTEGER NULL DEFAULT NULL,
-  `photos` VARCHAR NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-);
-
--- ---
 -- Foreign Keys
 -- ---
 

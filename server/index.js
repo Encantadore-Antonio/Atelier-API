@@ -24,39 +24,18 @@ app.get('/products', (req, res) => {
   getAllProducts();
 });
 
-app.get('/skus', (req, res) => {
-  async function getSkus() {
-    try {
-      const skus = await sql`
-      SELECT
-        json_agg(
-          json_build_object(
-            'id', skus.id,
-            'styleid', skus.styleid,
-            'size', skus.size,
-            'quantity', skus.quantity
-          )
-        ) as skus
-      FROM skus
-      GROUP BY skus.styleid
-      LIMIT 20
-      `;
-      // const skus = await sql`
-      //   SELECT * FROM skus LIMIT 20
-      //   `;
-      res.send(skus);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-  getSkus();
-});
-
 app.get('/products/:product_id', (req, res) => {
   async function getFeatures() {
     try {
       const features = await sql`
-      SELECT product.*, json_agg(json_build_object('feature', features.feature, 'value', features.value)) as features
+      SELECT
+        product.*,
+        json_agg(
+          json_build_object(
+            'feature', features.feature,
+            'value', features.value
+          )
+        ) as features
       FROM product
       LEFT JOIN features ON features.product_id = product.id
       WHERE product.id = ${req.params.product_id}

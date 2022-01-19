@@ -105,39 +105,3 @@ CREATE TABLE skus (
   size varchar(12),
   quantity integer
 );
-
--- ---
--- Table 'Reviews'
---
--- ---
-
--- /reviews.csv
--- id
--- product_id
--- rating
--- date
--- summary
--- body
--- recommend
--- reported
--- reviewer_name
--- reviewer_email
--- response
--- helpfulness
-
-DROP TABLE IF EXISTS reviews;
-
-CREATE TABLE reviews (
-  id integer PRIMARY KEY,
-  product_id integer,
-  rating text,
-  date bigint,
-  summary varchar(255),
-  body varchar(1000),
-  recommend boolean,
-  reported boolean,
-  reviewer_name varchar(32),
-  reviewer_email varchar(128),
-  response text,
-  helpfulness integer
-);
